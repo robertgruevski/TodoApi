@@ -33,3 +33,8 @@ Content-Type: application/json
   "isComplete": true
 }
 ###
+
+@id=2
+DELETE {{TodoApi_HostAddress}}/todoitems/{{id}}
+
+###
