@@ -18,23 +18,17 @@ todoItems.MapPost("/", CreateTodo);
 todoItems.MapPut("/{id}", UpdateTodo);
 todoItems.MapDelete("/{id}", DeleteTodo);
 
-static async Task<IResult> GetAllTodos(TodoDb db)
-{
-	return TypedResults.Ok(await db.Todos.ToArrayAsync());
-}
+static async Task<IResult> GetAllTodos(TodoDb db) => 
+	TypedResults.Ok(await db.Todos.ToArrayAsync());
 
-static async Task<IResult> GetCompleteTodos(TodoDb db)
-{
-	return TypedResults.Ok(await db.Todos.Where(t => t.IsComplete).ToListAsync());
-}
+static async Task<IResult> GetCompleteTodos(TodoDb db) => 
+	TypedResults.Ok(await db.Todos.Where(t => t.IsComplete).ToListAsync());
 
-static async Task<IResult> GetTodo(int id, TodoDb db)
-{
-	return await db.Todos.FindAsync(id)
+static async Task<IResult> GetTodo(int id, TodoDb db) => 
+	await db.Todos.FindAsync(id)
 		is Todo todo
 			? TypedResults.Ok(todo)
 			: TypedResults.NotFound();
-}
 
 static async Task<IResult> CreateTodo(Todo todo, TodoDb db)
 {
