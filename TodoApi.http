@@ -19,3 +19,17 @@ Content-Type: application/json
 GET {{TodoApi_HostAddress}}/todoitems/complete
 
 ###
+
+@id=3
+GET {{TodoApi_HostAddress}}/todoitems/{{id}}
+
+###
+
+@id=3
+PUT {{TodoApi_HostAddress}}/todoitems/{{id}}
+Content-Type: application/json
+{
+  "name": "wash the car",
+  "isComplete": true
+}
+###
