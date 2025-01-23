@@ -20,7 +20,7 @@ GET {{TodoApi_HostAddress}}/todoitems/complete
 
 ###
 
-@id=3
+@id=5
 GET {{TodoApi_HostAddress}}/todoitems/{{id}}
 
 ###
